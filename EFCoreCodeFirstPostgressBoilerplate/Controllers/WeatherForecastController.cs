@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using EFCoreCodeFirstPostgressBoilerplate.DbContext;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -17,23 +16,31 @@ namespace EFCoreCodeFirstPostgressBoilerplate.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly MyDbContext _context;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, MyDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IActionResult Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            try
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                var data = _context.WeatherForecasts.ToList();
+                if (!data.Any())
+                    return NotFound();
+
+                // Newtonsoft.Json.JsonConvert.SerializeObject()
+                return Ok(data);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, e.Message);
+                return StatusCode(500);
+            }
         }
     }
 }

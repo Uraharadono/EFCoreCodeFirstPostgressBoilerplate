@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EFCoreCodeFirstPostgressBoilerplate.DbContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,16 @@ namespace EFCoreCodeFirstPostgressBoilerplate
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddConsole();
+                loggingBuilder.AddDebug();
+            });
+
+            // "MyContext" string comes from "appsettings.json" file
+            services.AddDbContext<MyDbContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("MyContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
