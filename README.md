@@ -7,6 +7,6 @@ Boilerplate project for quick-start of EntityFrameworkCore CodeFirst approach wi
 2. Restore (or just build) npm packages
 3. Change connection string in "appsettings.json" to your creds
 4. Open PM (Package Manager) Console:
-  1. Run command "Add-Migration InitialMigration" 
-  2. Run command "Update-Database"
+1. Run command "Add-Migration InitialMigration" 
+2. Run command "Update-Database"
 5. Database should be created
