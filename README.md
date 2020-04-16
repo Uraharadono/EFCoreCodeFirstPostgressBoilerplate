@@ -15,6 +15,9 @@ There is big TODO regarding 2nd project, regarding me not knowing and Microsoft 
 2. Restore (or just build) npm packages
 3. Change connection string in "appsettings.json" to your creds
 4. Open PM (Package Manager) Console:
-1. Run command "Add-Migration InitialMigration" 
-2. Run command "Update-Database"
+- Run command "Add-Migration InitialMigration" 
+- Run command "Update-Database"
 5. Database should be created
+6. Run one of the projects depending on your choosing and start making requests. 
+
+** If you are new to development, and just want to see what this is all about, for methods of type POST (that post some data) you should use something like Postman to make requests
