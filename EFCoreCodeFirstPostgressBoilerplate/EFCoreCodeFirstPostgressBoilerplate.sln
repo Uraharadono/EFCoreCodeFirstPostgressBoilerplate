@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreCodeFirstPostgressBoilerplate", "EFCoreCodeFirstPostgressBoilerplate.csproj", "{F077CC0D-24F8-4BE1-BD26-28168EE7AAA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreCodeFirstPostgressBoilerplate", "EFCoreCodeFirstPostgressBoilerplate.csproj", "{F077CC0D-24F8-4BE1-BD26-28168EE7AAA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreCodeFirstPostgressBoilerplate.UowRepo", "..\EFCoreCodeFirstPostgressBoilerplate.UowRepo\EFCoreCodeFirstPostgressBoilerplate.UowRepo.csproj", "{759EE6B8-D764-4446-BF98-FC3DA226F543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F077CC0D-24F8-4BE1-BD26-28168EE7AAA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F077CC0D-24F8-4BE1-BD26-28168EE7AAA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F077CC0D-24F8-4BE1-BD26-28168EE7AAA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{759EE6B8-D764-4446-BF98-FC3DA226F543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{759EE6B8-D764-4446-BF98-FC3DA226F543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{759EE6B8-D764-4446-BF98-FC3DA226F543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{759EE6B8-D764-4446-BF98-FC3DA226F543}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
